@@ -520,3 +520,4 @@ integer st;
     rspeak_(825);
     rspeak_(st);
 } /* ewtell_ */
+// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:

@@ -151,3 +151,4 @@ void princo_(integer obj, integer desc)
       /* L100: */
    }
 } /* princo_ */
+// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:

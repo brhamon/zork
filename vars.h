@@ -414,3 +414,4 @@ EXTERN const struct {
 #define bats_1 bats_
 
 #endif
+// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:

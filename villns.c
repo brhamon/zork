@@ -465,3 +465,4 @@ L750:
    return ret_val;
 
 } /* thiefp_ */
+// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:

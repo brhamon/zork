@@ -157,3 +157,4 @@ L10:
     ret_val = FALSE_;
     return ret_val;
 } /* lightp_ */
+// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:

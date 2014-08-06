@@ -869,3 +869,4 @@ L27600:
    return ret_val;
 
 } /* sverbs_ */
+// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:

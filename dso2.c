@@ -162,3 +162,4 @@ void scrupd_(integer n)
    return;
 
 } /* scrupd_ */
+// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:

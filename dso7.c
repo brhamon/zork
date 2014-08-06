@@ -154,3 +154,4 @@ void cpinfo_(integer rmk, integer st)
    }
    /* 						!WEST LADDER? */
 } /* cpinfo_ */
+// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:

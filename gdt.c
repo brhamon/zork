@@ -786,3 +786,4 @@ L47000:
 } /* gdt_ */
 
 #endif /* ALLOW_GDT */
+// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:

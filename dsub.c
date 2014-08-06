@@ -573,3 +573,4 @@ logical rappli_(integer ri)
    }
    /* 						!IF OLD, PROCESSOR 1. */
 } /* rappli_ */
+// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:

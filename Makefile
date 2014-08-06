@@ -1,6 +1,7 @@
 # Makefile for dungeon
 
 CC = gcc
+BUILD ?= debug
 # Where to install the program
 BINDIR = /usr/games
 
@@ -37,14 +38,22 @@ LIBS = -lcurses
 
 # End of more options
 
+WIZARDID=$(shell id -u)
+
+# Compilation flags
+ifeq ($(BUILD),debug)
+CFLAGS += -g -DDEBUG
+
 # Uncomment the following line if you want to have access to the game
 # debugging tool.  This is invoked by typing "gdt".  It is not much
 # use except for debugging.
-# GDTFLAG = -DALLOW_GDT
+GDTFLAG = -DALLOW_GDT
 
-# Compilation flags
-# CFLAGS = -g -DDEBUG
-CFLAGS = -O3
+endif
+ifeq ($(BUILD),release)
+CFLAGS += -O3
+endif
+
 # On SCO Unix Development System 3.2.2a, the const type qualifier does
 # not work correctly when using cc.  The following line will cause it
 # to not be used and should be uncommented.
@@ -59,10 +68,7 @@ CSRC =	actors.c ballop.c clockr.c demons.c dgame.c dinit.c dmain.c\
 	nrooms.c objcts.c rooms.c sobjs.c supp.c sverbs.c verbs.c villns.c
 
 # Object files
-OBJS =	actors.o ballop.o clockr.o demons.o dgame.o dinit.o dmain.o\
-	dso1.o dso2.o dso3.o dso4.o dso5.o dso6.o dso7.o dsub.o dverb1.o\
-	dverb2.o gdt.o lightp.o local.o nobjs.o np.o np1.o np2.o np3.o\
-	nrooms.o objcts.o rooms.o sobjs.o supp.o sverbs.o verbs.o villns.o
+OBJS =	$(CSRC:%.c=%.o)
 
 dungeon: $(OBJS) dtextc.dat
 	$(CC) $(CFLAGS) -o dungeon $(OBJS) $(LIBS)
@@ -87,7 +93,7 @@ gdt.o: gdt.c funcs.h vars.h
 	$(CC) $(CFLAGS) $(GDTFLAG) -c gdt.c
 
 local.o: local.c funcs.h vars.h
-	$(CC) $(CFLAGS) $(GDTFLAG) -c local.c
+	$(CC) $(CFLAGS) $(GDTFLAG) -DWIZARDID=$(WIZARDID) -c local.c
 
 supp.o: supp.c funcs.h vars.h
 	$(CC) $(CFLAGS) $(TERMFLAG) -c supp.c	
@@ -120,3 +126,5 @@ sobjs.o: funcs.h vars.h
 sverbs.o: funcs.h vars.h
 verbs.o: funcs.h vars.h
 villns.o: funcs.h vars.h
+
+# vim:set shiftwidth=4 softtabstop=4 noexpandtab tabstop=4:

@@ -26,7 +26,7 @@ FILE *dbfile;
 #ifdef unix
 #define TEXTFILE "/usr/games/lib/dunlib/dtextc.dat"
 #else /* ! unix */
- I need a definition for TEXTFILE
+#error I need a definition for TEXTFILE
 #endif /* ! unix */
 #endif /* ! __AMOS__ */
 #endif /* ! TEXTFILE */
@@ -459,3 +459,4 @@ L1975:
    return ret_val;
 
 } /* init_ */
+// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:

@@ -165,3 +165,4 @@ L100:
    }
    return ret_val;
 } /* mrhere_ */
+// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:

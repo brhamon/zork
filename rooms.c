@@ -938,3 +938,4 @@ L37000:
     return ret_val;
 
 } /* rappl1_ */
+// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:

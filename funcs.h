@@ -133,3 +133,4 @@ extern logical
 	yesno_ P((integer, integer, integer));
 
 #endif
+// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:

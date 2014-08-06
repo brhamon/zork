@@ -290,3 +290,4 @@ L6000:
 /* 						!YES, ADV OP. */
 
 } /* lex_ */
+// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
