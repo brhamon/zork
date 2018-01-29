@@ -57,12 +57,12 @@ L200:
     unpack_(j, &newj);
 /* 						!UNPACK SYNTAX. */
     sprep = syntax_1.dobj & VPMASK;
-    if (! syneql_(pv_1.p1, pv_1.o1, syntax_1.dobj, syntax_1.dfl1, 
+    if (! syneql_(pv_1.p1, pv_1.o1, syntax_1.dobj, syntax_1.dfl1,
 	    syntax_1.dfl2)) {
 	goto L1000;
     }
     sprep = syntax_1.iobj & VPMASK;
-    if (syneql_(pv_1.p2, pv_1.o2, syntax_1.iobj, syntax_1.ifl1, 
+    if (syneql_(pv_1.p2, pv_1.o2, syntax_1.iobj, syntax_1.ifl1,
 	    syntax_1.ifl2)) {
 	goto L6000;
     }
@@ -125,7 +125,7 @@ L3000:
 	goto L3500;
     }
 /* 						!ANY ORPHAN? */
-    if (syneql_(pv_1.p1, pv_1.o1, syntax_1.dobj, syntax_1.dfl1, 
+    if (syneql_(pv_1.p1, pv_1.o1, syntax_1.dobj, syntax_1.dfl1,
 	    syntax_1.dfl2)) {
 	goto L4000;
     }
@@ -286,8 +286,8 @@ integer sfl2;
 	goto L100;
     }
 /* 						!ANY OBJECT? */
-    ret_val = prep == (sprep & VPMASK) && (sfl1 & objcts_1.oflag1[
-	    obj - 1] | sfl2 & objcts_1.oflag2[obj - 1]) != 0;
+    ret_val = prep == (sprep & VPMASK) && ((sfl1 & objcts_1.oflag1[
+	    obj - 1]) | (sfl2 & objcts_1.oflag2[obj - 1])) != 0;
     return ret_val;
 
 L100:
@@ -393,7 +393,7 @@ L3000:
     return ret_val;
 
 L3500:
-    if (x != 0 && objcts_1.oadv[x - 1] == play_1.winner || weight_(0, obj,
+    if ((x != 0 && objcts_1.oadv[x - 1] == play_1.winner) || weight_(0, obj,
 	     play_1.winner) + objcts_1.osize[obj - 1] <= state_1.mxload) {
 	goto L3700;
     }

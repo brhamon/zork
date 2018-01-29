@@ -6,6 +6,12 @@
 #include <moncal.h>
 #endif
 
+#ifdef unix
+#ifdef ALLOW_GDT
+#include <unistd.h>
+#endif
+#endif
+
 /* This function should return TRUE_ if it's OK for people to play the
  * game, FALSE_ otherwise.  If you have a working <time.h> library,
  * you can define NONBUSINESS to disallow play Monday to Friday, 9-5

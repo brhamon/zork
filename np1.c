@@ -337,7 +337,7 @@ L1500:
     }
 /* 						!IF DANGLING ADJ, PUNT. */
 
-    if (orphs_1.oflag != 0 && orphs_1.oprep != 0 && prep == 0 && pv_1.o1 != 0 
+    if (orphs_1.oflag != 0 && orphs_1.oprep != 0 && prep == 0 && pv_1.o1 != 0
 	    && pv_1.o2 == 0 && pv_1.act == orphs_1.oact) {
 	goto L11000;
     }

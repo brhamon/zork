@@ -11,19 +11,18 @@
 logical findxt_(integer dir, integer rm)
 {
    /* System generated locals */
-   logical ret_val;
+   logical ret_val = TRUE_;
 
    /* Local variables */
    integer i, xi;
    integer xxxflg;
 
-   ret_val = TRUE_;
    /* 						!ASSUME WINS. */
    xi = rooms_1.rexit[rm - 1];
    /* 						!FIND FIRST ENTRY. */
    if (xi == 0) {
       /* 						!YES, LOSE. */
-      return FALSE_;
+      goto bad;
    }
    /* 						!NO EXITS? */
 
@@ -31,13 +30,13 @@ logical findxt_(integer dir, integer rm)
       i = exits_1.travel[xi - 1];
       /* 						!GET ENTRY. */
       curxt_1.xroom1 = i & xpars_1.xrmask;
-      /* mask to 16-bits to get rid of sign extension problems with 32-bit ints 
+      /* mask to 16-bits to get rid of sign extension problems with 32-bit ints
        */
       xxxflg = ~ xpars_1.xlflag & 65535;
       curxt_1.xtype = ((i & xxxflg) / xpars_1.xfshft & xpars_1.xfmask) + 1;
       switch (curxt_1.xtype) {
-      case 4: 
-      case 3: 
+      case 4:
+      case 3:
          curxt_1.xobj = exits_1.travel[xi + 1] & xpars_1.xrmask;
          curxt_1.xactio = exits_1.travel[xi + 1] / xpars_1.xashft;
       case 2:
@@ -46,7 +45,7 @@ logical findxt_(integer dir, integer rm)
          xi += xpars_1.xelnt[curxt_1.xtype - 1];
          /* 						!ADVANCE TO NEXT ENTRY. */
          if ((i & xpars_1.xdmask) == dir) {
-            return ret_val;
+            goto out;
          }
 	 break;
       default:
@@ -56,13 +55,17 @@ logical findxt_(integer dir, integer rm)
 
       /* 						!DOOR/CEXIT/NEXIT - STRING. */
    } while ((i & xpars_1.xlflag) == 0);
+bad:
+   ret_val = FALSE_;
+out:
+   return ret_val;
 } /* findxt_ */
 
 /* FWIM- FIND WHAT I MEAN */
 
 /* DECLARATIONS */
 
-integer fwim_(integer f1, integer f2, integer rm, 
+integer fwim_(integer f1, integer f2, integer rm,
               integer con, integer adv, logical nocare)
 {
    /* System generated locals */
@@ -76,7 +79,7 @@ integer fwim_(integer f1, integer f2, integer rm,
    /* 						!ASSUME NOTHING. */
    for (i = 1; i <= objcts_1.olnt; ++i) {
       /* 						!LOOP */
-      if ((rm == 0 || objcts_1.oroom[i - 1] != rm) && (adv == 0 || 
+      if ((rm == 0 || objcts_1.oroom[i - 1] != rm) && (adv == 0 ||
                objcts_1.oadv[i - 1] != adv) && (con == 0 || objcts_1.ocan[
                   i - 1] != con)) {
          continue;
@@ -87,9 +90,9 @@ integer fwim_(integer f1, integer f2, integer rm,
       if ((objcts_1.oflag1[i - 1] & VISIBT) == 0) {
          continue;
       }
-      if (~ (nocare) & (objcts_1.oflag1[i - 1] & TAKEBT) == 0 || (
-               objcts_1.oflag1[i - 1] & f1) == 0 && (objcts_1.oflag2[i - 1] 
-                  & f2) == 0) {
+      if ((~ (nocare) & ((objcts_1.oflag1[i - 1] & TAKEBT) == 0)) || ((
+               objcts_1.oflag1[i - 1] & f1) == 0 && (objcts_1.oflag2[i - 1]
+                  & f2) == 0)) {
          goto L500;
       }
       if (ret_val != 0) {
@@ -107,9 +110,9 @@ L500:
       }
       for (j = 1; j <= objcts_1.olnt; ++j) {
          /* 						!NO, SEARCH CONTENTS. */
-         if (objcts_1.ocan[j - 1] != i || (objcts_1.oflag1[j - 1] & 
-                  VISIBT) == 0 || (objcts_1.oflag1[j - 1] & f1) ==
-               0 && (objcts_1.oflag2[j - 1] & f2) == 0) {
+         if (objcts_1.ocan[j - 1] != i || (objcts_1.oflag1[j - 1] &
+                  VISIBT) == 0 || ((objcts_1.oflag1[j - 1] & f1) ==
+               0 && (objcts_1.oflag2[j - 1] & f2) == 0)) {
             continue;
          }
          if (ret_val == 0) {

@@ -48,8 +48,8 @@ integer robrm_(integer rm, integer pr, integer nr, integer nc, integer na)
       if (! qhere_(i, rm)) {
          continue;
       }
-      if (objcts_1.otval[i - 1] <= 0 || (objcts_1.oflag2[i - 1] & 
-               SCRDBT) != 0 || (objcts_1.oflag1[i - 1] & 
+      if (objcts_1.otval[i - 1] <= 0 || (objcts_1.oflag2[i - 1] &
+               SCRDBT) != 0 || (objcts_1.oflag1[i - 1] &
                   VISIBT) == 0 || ! prob_(pr, pr)) {
          if ((objcts_1.oflag2[i - 1] & ACTRBT) != 0) {
             ret_val += robadv_(oactor_(i), nr, nc, na);
@@ -132,7 +132,7 @@ integer fights_(integer h, logical flg)
 integer vilstr_(integer v)
 {
    /* System generated locals */
-   integer ret_val, i__1, i__2, i__3;
+   integer ret_val, i__2, i__3;
 
    /* Local variables */
    integer i;

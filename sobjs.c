@@ -442,9 +442,9 @@ L21000:
 
 L23000:
     if (prsvec_1.prsa != vindex_1.takew || objcts_1.ocan[prsvec_1.prso - 1] !=
-	     0 || objcts_1.oroom[prsvec_1.prso - 1] != rindex_1.treas || 
+	     0 || objcts_1.oroom[prsvec_1.prso - 1] != rindex_1.treas ||
 	    objcts_1.oroom[oindex_1.thief - 1] != rindex_1.treas || (
-	    objcts_1.oflag2[oindex_1.thief - 1] & FITEBT) == 0 || ! 
+	    objcts_1.oflag2[oindex_1.thief - 1] & FITEBT) == 0 || !
 	    hack_1.thfact) {
 	goto L10;
     }
@@ -497,7 +497,7 @@ L27100:
     rspeak_(211);
     objcts_1.oflag2[oindex_1.coffi - 1] &= ~ SCRDBT;
     objcts_1.oflag1[oindex_1.trunk - 1] |= VISIBT;
-    rooms_1.rflag[rindex_1.reser - 1] = (rooms_1.rflag[rindex_1.reser - 1] | 
+    rooms_1.rflag[rindex_1.reser - 1] = (rooms_1.rflag[rindex_1.reser - 1] |
 	    RLAND) & ~ (RWATER + RSEEN);
     return ret_val;
 
@@ -508,7 +508,7 @@ L27200:
     if (qhere_(oindex_1.trunk, rindex_1.reser)) {
 	objcts_1.oflag1[oindex_1.trunk - 1] &= ~ VISIBT;
     }
-    rooms_1.rflag[rindex_1.reser - 1] = (rooms_1.rflag[rindex_1.reser - 1] | 
+    rooms_1.rflag[rindex_1.reser - 1] = (rooms_1.rflag[rindex_1.reser - 1] |
 	    RWATER) & ~ RLAND;
     return ret_val;
 
@@ -661,7 +661,7 @@ L31600:
 /* O20--	LEAK */
 
 L33000:
-    if (prsvec_1.prso != oindex_1.leak || prsvec_1.prsa != vindex_1.plugw || 
+    if (prsvec_1.prso != oindex_1.leak || prsvec_1.prsa != vindex_1.plugw ||
 	    findex_1.rvmnt <= 0) {
 	goto L10;
     }
@@ -789,8 +789,8 @@ L37100:
 	goto L33100;
     }
 /* 						!WITH PUTTY? */
-    newsta_(oindex_1.iboat, 239, objcts_1.oroom[oindex_1.dboat - 1], 
-	    objcts_1.ocan[oindex_1.dboat - 1], objcts_1.oadv[oindex_1.dboat 
+    newsta_(oindex_1.iboat, 239, objcts_1.oroom[oindex_1.dboat - 1],
+	    objcts_1.ocan[oindex_1.dboat - 1], objcts_1.oadv[oindex_1.dboat
 	    - 1]);
     newsta_(oindex_1.dboat, 0, 0, 0, 0);
 /* 						!KILL DEFL BOAT, REPL. */
@@ -804,7 +804,7 @@ L38000:
 	goto L10;
     }
 /* 						!DISMISS READIN, OUT. */
-    if (prsvec_1.prsa != vindex_1.boardw || objcts_1.oadv[oindex_1.stick - 1] 
+    if (prsvec_1.prsa != vindex_1.boardw || objcts_1.oadv[oindex_1.stick - 1]
 	    != play_1.winner) {
 	goto L38100;
     }
@@ -857,9 +857,9 @@ L38400:
 /* O25--	BRAIDED ROPE */
 
 L41000:
-    if (prsvec_1.prsa != vindex_1.tiew || prsvec_1.prso != oindex_1.brope || 
-	    prsvec_1.prsi != oindex_1.hook1 && prsvec_1.prsi != 
-	    oindex_1.hook2) {
+    if (prsvec_1.prsa != vindex_1.tiew || prsvec_1.prso != oindex_1.brope ||
+	    (prsvec_1.prsi != oindex_1.hook1 && prsvec_1.prsi !=
+	    oindex_1.hook2)) {
 	goto L41500;
     }
     findex_1.btief = prsvec_1.prsi;

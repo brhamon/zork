@@ -48,7 +48,7 @@ integer spcobj;
     }
 /* 						!TEST RESULT. */
 L100:
-    if (av == 0 || av == obj || (objcts_1.oflag2[obj - 1] & FINDBT) 
+    if (av == 0 || av == obj || (objcts_1.oflag2[obj - 1] & FINDBT)
 	    != 0) {
 	goto L200;
     }
@@ -167,9 +167,9 @@ integer spcobj;
     i__1 = objcts_1.olnt;
     for (i = 1; i <= i__1; ++i) {
 /* 						!SEARCH OBJECTS. */
-	if ((objcts_1.oflag1[i - 1] & VISIBT) == 0 || (rm == 0 || ! 
-		qhere_(i, rm)) && (cn == 0 || objcts_1.ocan[i - 1] != cn) 
-		&& (ad == 0 || objcts_1.oadv[i - 1] != ad)) {
+	if ((objcts_1.oflag1[i - 1] & VISIBT) == 0 || ((rm == 0 || !
+		qhere_(i, rm)) && (cn == 0 || objcts_1.ocan[i - 1] != cn)
+		&& (ad == 0 || objcts_1.oadv[i - 1] != ad))) {
 	    goto L1000;
 	}
 	if (! thisit_(oidx, aidx, i, spcobj)) {
@@ -215,9 +215,9 @@ L300:
 		goto L500;
 	    }
 /* 						!INSIDE ANYTHING? */
-	    if ((objcts_1.oflag1[x - 1] & VISIBT) == 0 || (
+	    if ((objcts_1.oflag1[x - 1] & VISIBT) == 0 || ((
 		    objcts_1.oflag1[x - 1] & TRANBT) == 0 && (
-		    objcts_1.oflag2[x - 1] & OPENBT) == 0 || (
+		    objcts_1.oflag2[x - 1] & OPENBT) == 0) || (
 		    objcts_1.oflag2[x - 1] & SCHBT) == 0) {
 		goto L500;
 	    }

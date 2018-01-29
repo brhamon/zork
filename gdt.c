@@ -188,7 +188,7 @@ L2400:
 /* DR-- DISPLAY ROOMS */
 
 L10000:
-    if (! (j > 0 && j <= rooms_1.rlnt && (k > 0 && k <= rooms_1.rlnt) && j <= 
+    if (! (j > 0 && j <= rooms_1.rlnt && (k > 0 && k <= rooms_1.rlnt) && j <=
 	    k)) {
 	goto L2200;
     }
@@ -211,7 +211,7 @@ L10000:
 /* DO-- DISPLAY OBJECTS */
 
 L11000:
-    if (! (j > 0 && j <= objcts_1.olnt && (k > 0 && k <= objcts_1.olnt) && j 
+    if (! (j > 0 && j <= objcts_1.olnt && (k > 0 && k <= objcts_1.olnt) && j
 	    <= k)) {
 	goto L2200;
     }
@@ -259,7 +259,7 @@ L12000:
 /* DC-- DISPLAY CLOCK EVENTS */
 
 L13000:
-    if (! (j > 0 && j <= cevent_1.clnt && (k > 0 && k <= cevent_1.clnt) && j 
+    if (! (j > 0 && j <= cevent_1.clnt && (k > 0 && k <= cevent_1.clnt) && j
 	    <= k)) {
 	goto L2200;
     }
@@ -279,7 +279,7 @@ L13000:
 /* DX-- DISPLAY EXITS */
 
 L14000:
-    if (! (j > 0 && j <= exits_1.xlnt && (k > 0 && k <= exits_1.xlnt) && j <= 
+    if (! (j > 0 && j <= exits_1.xlnt && (k > 0 && k <= exits_1.xlnt) && j <=
 	    k)) {
 	goto L2200;
     }
@@ -639,7 +639,7 @@ L37000:
 /* D2-- DISPLAY ROOM2 LIST */
 
 L38000:
-    if (! (j > 0 && j <= oroom2_1.r2lnt && (k > 0 && k <= oroom2_1.r2lnt) && 
+    if (! (j > 0 && j <= oroom2_1.r2lnt && (k > 0 && k <= oroom2_1.r2lnt) &&
 	    j <= k)) {
 	goto L2200;
     }

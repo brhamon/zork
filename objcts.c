@@ -151,7 +151,7 @@ L5100:
 	goto L5200;
     }
 /* 						!INSIDE ANYTHING? */
-    if ((objcts_1.oflag2[objcts_1.ocan[prsvec_1.prso - 1] - 1] & 
+    if ((objcts_1.oflag2[objcts_1.ocan[prsvec_1.prso - 1] - 1] &
 	    OPENBT) != 0) {
 	goto L5200;
     }
@@ -209,7 +209,7 @@ L5600:
     return ret_val;
 
 L5700:
-    if (prsvec_1.prsa != vindex_1.dropw && prsvec_1.prsa != vindex_1.pourw && 
+    if (prsvec_1.prsa != vindex_1.dropw && prsvec_1.prsa != vindex_1.pourw &&
 	    prsvec_1.prsa != vindex_1.givew) {
 	goto L5900;
     }
@@ -298,9 +298,9 @@ L12000:
     goto L10;
 
 L12100:
-    if ((prsvec_1.prsa != vindex_1.attacw && prsvec_1.prsa != vindex_1.killw 
-	    || prsvec_1.prsi != oindex_1.rknif) && (prsvec_1.prsa != 
-	    vindex_1.swingw && prsvec_1.prsa != vindex_1.throww || 
+    if (((prsvec_1.prsa != vindex_1.attacw && prsvec_1.prsa != vindex_1.killw)
+	    || prsvec_1.prsi != oindex_1.rknif) && ((prsvec_1.prsa !=
+	    vindex_1.swingw && prsvec_1.prsa != vindex_1.throww) ||
 	    prsvec_1.prso != oindex_1.rknif)) {
 	goto L10;
     }
@@ -670,7 +670,7 @@ L50000:
 	goto L10;
     }
 /* 						!READOUT? */
-    if (objcts_1.ocan[oindex_1.water - 1] != oindex_1.bucke || 
+    if (objcts_1.ocan[oindex_1.water - 1] != oindex_1.bucke ||
 	    findex_1.bucktf) {
 	goto L50500;
     }
@@ -684,7 +684,7 @@ L50000:
 /* 						!FINISH UP. */
 
 L50500:
-    if (objcts_1.ocan[oindex_1.water - 1] == oindex_1.bucke || ! 
+    if (objcts_1.ocan[oindex_1.water - 1] == oindex_1.bucke || !
 	    findex_1.bucktf) {
 	goto L10;
     }
@@ -706,7 +706,7 @@ L50900:
 /* O121--	EATME CAKE */
 
 L51000:
-    if (prsvec_1.prsa != vindex_1.eatw || prsvec_1.prso != oindex_1.ecake || 
+    if (prsvec_1.prsa != vindex_1.eatw || prsvec_1.prso != oindex_1.ecake ||
 	    play_1.here != rindex_1.alice) {
 	goto L10;
     }
@@ -756,11 +756,11 @@ L52200:
     return ret_val;
 
 L52300:
-    if (play_1.here != rindex_1.alice && play_1.here != rindex_1.alism && 
+    if (play_1.here != rindex_1.alice && play_1.here != rindex_1.alism &&
 	    play_1.here != rindex_1.alitr) {
 	goto L10;
     }
-    if (prsvec_1.prsa != vindex_1.eatw && prsvec_1.prsa != vindex_1.throww || 
+    if ((prsvec_1.prsa != vindex_1.eatw && prsvec_1.prsa != vindex_1.throww) ||
 	    prsvec_1.prso != oindex_1.orice) {
 	goto L52400;
     }
@@ -922,8 +922,8 @@ L57100:
 	goto L57300;
     }
 /* 						!PUSH PINE WALL? */
-    if (findex_1.mloc == rindex_1.mrc && findex_1.mdir == 180 || 
-	    findex_1.mloc == rindex_1.mrd && findex_1.mdir == 0 || 
+    if ((findex_1.mloc == rindex_1.mrc && findex_1.mdir == 180) ||
+	    (findex_1.mloc == rindex_1.mrd && findex_1.mdir == 0) ||
 	    findex_1.mloc == rindex_1.mrg) {
 	goto L57200;
     }

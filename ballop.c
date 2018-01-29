@@ -87,7 +87,7 @@ L300:
    return ret_val;
 
 L350:
-   if (prsvec_1.prsa != vindex_1.putw || prsvec_1.prsi != oindex_1.recep || 
+   if (prsvec_1.prsa != vindex_1.putw || prsvec_1.prsi != oindex_1.recep ||
          qempty_(oindex_1.recep)) {
       goto L10;
    }
@@ -95,7 +95,7 @@ L350:
    return ret_val;
 
 L500:
-   if (prsvec_1.prsa != vindex_1.unboaw || (rooms_1.rflag[play_1.here - 1] & 
+   if (prsvec_1.prsa != vindex_1.unboaw || (rooms_1.rflag[play_1.here - 1] &
             RLAND) == 0) {
       goto L600;
    }
@@ -112,9 +112,9 @@ L600:
    }
    rspsub_(550, objcts_1.odesc2[prsvec_1.prso - 1]);
    /* 						!LIGHT FIRE IN RECEP. */
-   cevent_1.ctick[cindex_1.cevbrn - 1] = objcts_1.osize[prsvec_1.prso - 1] * 
+   cevent_1.ctick[cindex_1.cevbrn - 1] = objcts_1.osize[prsvec_1.prso - 1] *
       20;
-   objcts_1.oflag1[prsvec_1.prso - 1] |= ONBT + FLAMBT + 
+   objcts_1.oflag1[prsvec_1.prso - 1] |= ONBT + FLAMBT +
       LITEBT & ~ (TAKEBT + READBT);
    if (findex_1.binff != 0) {
       return ret_val;

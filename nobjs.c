@@ -11,9 +11,7 @@
 
 static logical mirpan_ P((integer, logical));
 
-logical nobjs_(ri, arg)
-integer ri;
-integer arg;
+logical nobjs_(integer ri, integer arg __attribute__((unused)))
 {
     /* System generated locals */
     integer i__1, i__2;
@@ -97,7 +95,7 @@ L2100:
 	goto L2400;
     }
 /* 						!PRSO EQ TARGET? */
-    if (prsvec_1.prsa != vindex_1.pushw && prsvec_1.prsa != vindex_1.movew && 
+    if (prsvec_1.prsa != vindex_1.pushw && prsvec_1.prsa != vindex_1.movew &&
 	    prsvec_1.prsa != vindex_1.takew && prsvec_1.prsa != vindex_1.rubw)
 	     {
 	goto L2200;
@@ -252,7 +250,7 @@ L4500:
     i = 655;
 /* 						!YOU BLEW IT. */
 L4600:
-    newsta_(oindex_1.begg, i, objcts_1.oroom[oindex_1.egg - 1], 
+    newsta_(oindex_1.begg, i, objcts_1.oroom[oindex_1.egg - 1],
 	    objcts_1.ocan[oindex_1.egg - 1], objcts_1.oadv[oindex_1.egg - 1])
 	    ;
     newsta_(oindex_1.egg, 0, 0, 0, 0);
@@ -305,8 +303,8 @@ L5000:
     return ret_val;
 
 L5100:
-    if (! findex_1.singsf && (play_1.here == rindex_1.mtree || play_1.here >= 
-	    rindex_1.fore1 && play_1.here < rindex_1.clear)) {
+    if (! findex_1.singsf && (play_1.here == rindex_1.mtree || (play_1.here >=
+	    rindex_1.fore1 && play_1.here < rindex_1.clear))) {
 	goto L5200;
     }
     rspeak_(646);
@@ -584,7 +582,7 @@ L12100:
     if (prsvec_1.prsa == vindex_1.putw && prsvec_1.prsi == oindex_1.rbeam) {
 	goto L12200;
     }
-    if (prsvec_1.prsa != vindex_1.mungw || prsvec_1.prso != oindex_1.rbeam || 
+    if (prsvec_1.prsa != vindex_1.mungw || prsvec_1.prso != oindex_1.rbeam ||
 	    prsvec_1.prsi == 0) {
 	goto L10;
     }
@@ -613,8 +611,8 @@ L12300:
 /* O44--	BRONZE DOOR */
 
 L13000:
-    if (play_1.here == rindex_1.ncell || findex_1.lcell == 4 && (play_1.here 
-	    == rindex_1.cell || play_1.here == rindex_1.scorr)) {
+    if (play_1.here == rindex_1.ncell || (findex_1.lcell == 4 && (play_1.here
+	    == rindex_1.cell || play_1.here == rindex_1.scorr))) {
 	goto L13100;
     }
     rspeak_(763);
@@ -626,7 +624,7 @@ L13100:
 	goto L10;
     }
 /* 						!OPEN/CLOSE? */
-    if (play_1.here == rindex_1.ncell && (objcts_1.oflag2[oindex_1.odoor - 1] 
+    if (play_1.here == rindex_1.ncell && (objcts_1.oflag2[oindex_1.odoor - 1]
 	    & OPENBT) != 0) {
 	rspeak_(766);
     }
@@ -709,7 +707,7 @@ L17000:
     i__1 = objcts_1.olnt;
     for (i = 1; i <= i__1; ++i) {
 /* 						!RELOCATE OLD TO HYPER. */
-	if (objcts_1.oroom[i - 1] == rindex_1.cell && (objcts_1.oflag1[i - 1] 
+	if (objcts_1.oroom[i - 1] == rindex_1.cell && (objcts_1.oflag1[i - 1]
 		& DOORBT) == 0) {
 	    i__2 = findex_1.lcell * hyper_1.hfactr;
 	    newsta_(i, 0, i__2, 0, 0);
@@ -763,7 +761,7 @@ L18000:
     return ret_val;
 
 L18100:
-    if (prsvec_1.prsa != vindex_1.movew && prsvec_1.prsa != vindex_1.putw && 
+    if (prsvec_1.prsa != vindex_1.movew && prsvec_1.prsa != vindex_1.putw &&
 	    prsvec_1.prsa != vindex_1.trntow) {
 	goto L10;
     }
@@ -881,7 +879,7 @@ logical pnf;
 L100:
     mrbf = 0;
 /* 						!ASSUME MIRROR OK. */
-    if (num == 1 && ! findex_1.mr1f || num == 2 && ! findex_1.mr2f) {
+    if ((num == 1 && ! findex_1.mr1f) || (num == 2 && ! findex_1.mr2f)) {
 	mrbf = 1;
     }
     if (prsvec_1.prsa != vindex_1.movew && prsvec_1.prsa != vindex_1.openw) {
@@ -893,8 +891,8 @@ L100:
     return ret_val;
 
 L200:
-    if (pnf || prsvec_1.prsa != vindex_1.lookiw && prsvec_1.prsa != 
-	    vindex_1.examiw && prsvec_1.prsa != vindex_1.lookw) {
+    if (pnf || (prsvec_1.prsa != vindex_1.lookiw && prsvec_1.prsa !=
+	    vindex_1.examiw && prsvec_1.prsa != vindex_1.lookw)) {
 	goto L300;
     }
     i__1 = mrbf + 844;

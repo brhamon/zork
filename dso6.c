@@ -15,7 +15,7 @@ logical ghere_(integer obj, integer rm)
    ret_val = TRUE_;
    /* 						!ASSUME WINS. */
    switch (obj - star_1.strbit) {
-   case 1: 
+   case 1:
    case 2:
    case 3:
    case 4:
@@ -24,8 +24,8 @@ logical ghere_(integer obj, integer rm)
    case 7:
    case 8:
    case 9:
-   case 10: 
-   case 11:  
+   case 10:
+   case 11:
       return TRUE_;
    /* 1000--	STARS ARE ALWAYS HERE */
    case 12:  goto L2000;
@@ -51,28 +51,28 @@ logical ghere_(integer obj, integer rm)
    /* 2000--	BIRD */
 
 L2000:
-   ret_val = rm >= rindex_1.fore1 && rm < rindex_1.clear || rm == 
+   ret_val = (rm >= rindex_1.fore1 && rm < rindex_1.clear) || rm ==
       rindex_1.mtree;
    return ret_val;
 
    /* 3000--	TREE */
 
 L3000:
-   ret_val = rm >= rindex_1.fore1 && rm < rindex_1.clear && rm != 
+   ret_val = rm >= rindex_1.fore1 && rm < rindex_1.clear && rm !=
       rindex_1.fore3;
    return ret_val;
 
    /* 4000--	NORTH WALL */
 
 L4000:
-   ret_val = rm >= rindex_1.bkvw && rm <= rindex_1.bkbox || rm == 
+   ret_val = (rm >= rindex_1.bkvw && rm <= rindex_1.bkbox) || rm ==
       rindex_1.cpuzz;
    return ret_val;
 
    /* 5000--	EAST, SOUTH, WEST WALLS */
 
 L5000:
-   ret_val = rm >= rindex_1.bkvw && rm < rindex_1.bkbox || rm == 
+   ret_val = (rm >= rindex_1.bkvw && rm < rindex_1.bkbox) || rm ==
       rindex_1.cpuzz;
    return ret_val;
 
@@ -85,14 +85,14 @@ L6000:
    /* 7000--	GLOBAL GUARDIANS */
 
 L7000:
-   ret_val = rm >= rindex_1.mrc && rm <= rindex_1.mrd || rm >= 
-      rindex_1.mrce && rm <= rindex_1.mrdw || rm == rindex_1.inmir;
+   ret_val = (rm >= rindex_1.mrc && rm <= rindex_1.mrd) || (rm >=
+      rindex_1.mrce && rm <= rindex_1.mrdw) || rm == rindex_1.inmir;
    return ret_val;
 
    /* 8000--	ROSE/CHANNEL */
 
 L8000:
-   ret_val = rm >= rindex_1.mra && rm <= rindex_1.mrd || rm == 
+   ret_val = (rm >= rindex_1.mra && rm <= rindex_1.mrd) || rm ==
       rindex_1.inmir;
    return ret_val;
 
@@ -105,14 +105,14 @@ L9100:
    }
    /* 						!PANEL AT FDOOR. */
 L9000:
-   ret_val = rm >= rindex_1.mra && rm <= rindex_1.mrc || rm >= 
-      rindex_1.mrae && rm <= rindex_1.mrcw;
+   ret_val = (rm >= rindex_1.mra && rm <= rindex_1.mrc) || (rm >=
+      rindex_1.mrae && rm <= rindex_1.mrcw);
    return ret_val;
 
    /* 10000--	MASTER */
 
 L10000:
-   ret_val = rm == rindex_1.fdoor || rm == rindex_1.ncorr || rm == 
+   ret_val = rm == rindex_1.fdoor || rm == rindex_1.ncorr || rm ==
       rindex_1.parap || rm == rindex_1.cell;
    return ret_val;
 
@@ -159,8 +159,8 @@ L100:
    /* RM IS WITHIN ONE OF MLOC, AND MDIR IS E-W */
 
    ret_val = 1;
-   if (rm < findex_1.mloc && findex_1.mdir < 180 || rm > findex_1.mloc && 
-         findex_1.mdir > 180) {
+   if ((rm < findex_1.mloc && findex_1.mdir < 180) || (rm > findex_1.mloc &&
+         findex_1.mdir > 180)) {
       ret_val = 2;
    }
    return ret_val;

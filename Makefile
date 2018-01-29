@@ -40,6 +40,7 @@ LIBS = -lcurses
 
 WIZARDID=$(shell id -u)
 
+CFLAGS = -Wall -Werror -Wextra
 # Compilation flags
 ifeq ($(BUILD),debug)
 CFLAGS += -g -DDEBUG

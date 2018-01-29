@@ -77,7 +77,7 @@ L19300:
     return ret_val;
 
 L19400:
-    if (prsvec_1.prsi != oindex_1.match || ! ((objcts_1.oflag1[oindex_1.match 
+    if (prsvec_1.prsi != oindex_1.match || ! ((objcts_1.oflag1[oindex_1.match
 	    - 1] & ONBT) != 0)) {
 	goto L19500;
     }
@@ -94,7 +94,7 @@ L19400:
     return ret_val;
 
 L19500:
-    if (prsvec_1.prsi != oindex_1.torch || ! ((objcts_1.oflag1[oindex_1.torch 
+    if (prsvec_1.prsi != oindex_1.torch || ! ((objcts_1.oflag1[oindex_1.torch
 	    - 1] & ONBT) != 0)) {
 	goto L19600;
     }
@@ -142,7 +142,7 @@ L20100:
     return ret_val;
 
 L20500:
-    if (prsvec_1.prsa != vindex_1.trnofw || (objcts_1.oflag1[oindex_1.match - 
+    if (prsvec_1.prsa != vindex_1.trnofw || (objcts_1.oflag1[oindex_1.match -
 	    1] & ONBT) == 0) {
 	goto L10;
     }

@@ -4,11 +4,13 @@
 /* ALL RIGHTS RESERVED, COMMERCIAL USAGE STRICTLY PROHIBITED */
 /* WRITTEN BY R. M. SUPNIK */
 
+#ifdef DEBUG
+#include <stdio.h>
+#endif
 #include "funcs.h"
 #include "vars.h"
 
-logical trollp_(arg)
-   integer arg;
+logical trollp_(integer arg __attribute__((unused)))
 {
    /* System generated locals */
    logical ret_val;
@@ -23,8 +25,8 @@ logical trollp_(arg)
          if (prsvec_1.prsa != vindex_1.outxw) {
             if (prsvec_1.prsa != vindex_1.inxw) {
                if (prsvec_1.prsa != vindex_1.frstqw) {
-                  if (prsvec_1.prsa != vindex_1.movew && prsvec_1.prsa != vindex_1.takew && 
-                        prsvec_1.prsa != vindex_1.mungw && prsvec_1.prsa != 
+                  if (prsvec_1.prsa != vindex_1.movew && prsvec_1.prsa != vindex_1.takew &&
+                        prsvec_1.prsa != vindex_1.mungw && prsvec_1.prsa !=
                         vindex_1.throww && prsvec_1.prsa != vindex_1.givew) {
                      if (! findex_1.trollf || prsvec_1.prsa != vindex_1.hellow) {
                         ret_val = FALSE_;
@@ -141,8 +143,7 @@ L1050:
 
 /* DECLARATIONS */
 
-logical cyclop_(arg)
-   integer arg;
+logical cyclop_(integer arg __attribute__((unused)))
 {
    /* System generated locals */
    integer i__1, i__2;
@@ -153,8 +154,11 @@ logical cyclop_(arg)
 
    ret_val = TRUE_;
    /* 						!ASSUME WINS. */
+#ifdef DEBUG
+   printf("cyclof = %d\n", findex_1.cyclof);
+#endif
    if (! findex_1.cyclof) {
-      if (prsvec_1.prsa == vindex_1.fightw || prsvec_1.prsa == vindex_1.frstqw) 
+      if (prsvec_1.prsa == vindex_1.fightw || prsvec_1.prsa == vindex_1.frstqw)
       {
          ret_val = FALSE_;
          /* 						!FAILS. */
@@ -268,8 +272,8 @@ logical cyclop_(arg)
    }
    /* 						!ASLEEP? */
    if (prsvec_1.prsa != vindex_1.alarmw && prsvec_1.prsa != vindex_1.mungw &&
-         prsvec_1.prsa != vindex_1.hellow && prsvec_1.prsa != 
-         vindex_1.burnw && prsvec_1.prsa != vindex_1.killw && 
+         prsvec_1.prsa != vindex_1.hellow && prsvec_1.prsa !=
+         vindex_1.burnw && prsvec_1.prsa != vindex_1.killw &&
          prsvec_1.prsa != vindex_1.attacw) {
       ret_val = FALSE_;
       /* 						!FAILS. */
@@ -290,8 +294,7 @@ logical cyclop_(arg)
 
 /* DECLARATIONS */
 
-logical thiefp_(arg)
-   integer arg;
+logical thiefp_(integer arg __attribute__((unused)))
 {
    /* System generated locals */
    integer i__1;
@@ -305,14 +308,14 @@ logical thiefp_(arg)
    if (prsvec_1.prsa != vindex_1.fightw) {
       if (prsvec_1.prsa != vindex_1.deadxw) {
          if (prsvec_1.prsa != vindex_1.frstqw) {
-            if (prsvec_1.prsa != vindex_1.hellow || objcts_1.odesc1[oindex_1.thief - 
+            if (prsvec_1.prsa != vindex_1.hellow || objcts_1.odesc1[oindex_1.thief -
                   1] != 504) {
                if (prsvec_1.prsa != vindex_1.outxw) {
                   if (prsvec_1.prsa != vindex_1.inxw) {
                      if (prsvec_1.prsa != vindex_1.takew) {
                         if (prsvec_1.prsa != vindex_1.throww || prsvec_1.prso != oindex_1.knife ||
                               (objcts_1.oflag2[oindex_1.thief - 1] & FITEBT) != 0) {
-                           if (prsvec_1.prsa != vindex_1.throww && prsvec_1.prsa != vindex_1.givew ||
+                           if ((prsvec_1.prsa != vindex_1.throww && prsvec_1.prsa != vindex_1.givew) ||
                                  prsvec_1.prso == 0 || prsvec_1.prso == oindex_1.thief) {
                               ret_val = FALSE_;
                               return ret_val;
@@ -426,7 +429,7 @@ L750:
       i__1 = objcts_1.olnt;
       for (i = 1; i <= i__1; ++i) {
          /* 						!LOOP. */
-         if (i == oindex_1.chali || i == oindex_1.thief || play_1.here != 
+         if (i == oindex_1.chali || i == oindex_1.thief || play_1.here !=
                rindex_1.treas || ! qhere_(i, play_1.here)) {
             if (objcts_1.oadv[i - 1] == -oindex_1.thief) {
                newsta_(i, 0, play_1.here, 0, 0);

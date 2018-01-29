@@ -78,7 +78,7 @@ static void rspsb2nl_(integer n, integer y, integer z, integer nl)
    res = fseek(dbfile, x + (long)rmsg_1.mrloc, SEEK_SET);
 #ifdef DEBUG
    if (res == EOF) {
-      fprintf(stderr, "Error seeking database loc %d\n", x);
+      fprintf(stderr, "Error seeking database loc %ld\n", x);
       exit_();
    }
 #endif
@@ -92,7 +92,7 @@ static void rspsb2nl_(integer n, integer y, integer z, integer nl)
       i = getc(dbfile);
 #ifdef DEBUG
       if (i == EOF) {
-         fprintf(stderr, "Error reading database loc %d\n", x);
+         fprintf(stderr, "Error reading database loc %ld\n", x);
          exit_();
       }
 #endif
@@ -113,7 +113,7 @@ static void rspsb2nl_(integer n, integer y, integer z, integer nl)
 	 res = fseek(dbfile, iloc, SEEK_SET);
 #ifdef DEBUG
          if (res == EOF) {
-            fprintf(stderr, "Error seeking database loc %d\n", iloc);
+            fprintf(stderr, "Error seeking database loc %ld\n", iloc);
             exit_();
          }
 #endif
@@ -135,14 +135,14 @@ static void rspsb2nl_(integer n, integer y, integer z, integer nl)
 logical objact_()
 {
    /* 						!ASSUME WINS. */
-   if (prsvec_1.prsi != 0 && 
+   if (prsvec_1.prsi != 0 &&
          oappli_(objcts_1.oactio[prsvec_1.prsi - 1], 0)) {
       return TRUE_;
    }
    /* 						!YES, LET IT HANDLE. */
 
    /* 						!DIR OBJECT? */
-   if (prsvec_1.prso != 0 && 
+   if (prsvec_1.prso != 0 &&
          oappli_(objcts_1.oactio[prsvec_1.prso - 1], 0)) {
       return TRUE_;
    }
@@ -157,7 +157,7 @@ logical objact_()
 
 /* 	CALL BUG(NO,PAR) */
 
-void bug_(integer a, integer b)
+void bug_(integer a __attribute__((unused)), integer b __attribute__((unused)))
 {
 #ifdef DEBUG
 
@@ -300,7 +300,7 @@ void jigsup_(integer desc)
    objcts_1.oflag2[oindex_1.door - 1] &= ~ TCHBT;
    objcts_1.oflag1[oindex_1.robot - 1] = (objcts_1.oflag1[oindex_1.robot - 1]
          | VISIBT) & ~ NDSCBT;
-   if (objcts_1.oroom[oindex_1.lamp - 1] != 0 || objcts_1.oadv[oindex_1.lamp 
+   if (objcts_1.oroom[oindex_1.lamp - 1] != 0 || objcts_1.oadv[oindex_1.lamp
          - 1] == play_1.winner) {
       newsta_(oindex_1.lamp, 0, rindex_1.lroom, 0, 0);
    }
@@ -315,7 +315,7 @@ void jigsup_(integer desc)
    i = 1;
    for (j = 1; j <= objcts_1.olnt; ++j) {
       /* 						!LOOP THRU OBJECTS. */
-      if (objcts_1.oadv[j - 1] != play_1.winner || objcts_1.otval[j - 1] != 
+      if (objcts_1.oadv[j - 1] != play_1.winner || objcts_1.otval[j - 1] !=
             0) {
          goto L200;
       }
@@ -335,7 +335,7 @@ L400:
    nonofl = RAIR + RWATER + RSACRD + REND;
    /* 						!DONT MOVE HERE. */
    for (j = 1; j <= objcts_1.olnt; ++j) {
-      if (objcts_1.oadv[j - 1] != play_1.winner || objcts_1.otval[j - 1] == 
+      if (objcts_1.oadv[j - 1] != play_1.winner || objcts_1.otval[j - 1] ==
             0) {
          goto L300;
       }
@@ -490,8 +490,8 @@ L300:
    /* 						!OBJ ONLY? */
    i = rooms_1.rdesc2[play_1.here - 1];
    /* 						!ASSUME SHORT DESC. */
-   if (full == 0 && (findex_1.superf || (rooms_1.rflag[play_1.here - 1] & 
-               RSEEN) != 0 && findex_1.brieff)) {
+   if (full == 0 && (findex_1.superf || ((rooms_1.rflag[play_1.here - 1] &
+               RSEEN) != 0 && findex_1.brieff))) {
       goto L400;
    }
 
@@ -522,7 +522,7 @@ L400:
    /* 						!OUTPUT DESCRIPTION. */
 L500:
    if (advs_1.avehic[play_1.winner - 1] != 0) {
-      rspsub_(431, objcts_1.odesc2[advs_1.avehic[play_1.winner - 1] - 
+      rspsub_(431, objcts_1.odesc2[advs_1.avehic[play_1.winner - 1] -
             1]);
    }
 
@@ -568,7 +568,7 @@ logical rappli_(integer ri)
       return rappl2_(ri);
    }
    /* 						!IF NEW, PROCESSOR 2. */
-   else if (ri < newrms) {
+   else {
       return rappl1_(ri);
    }
    /* 						!IF OLD, PROCESSOR 1. */

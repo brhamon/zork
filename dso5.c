@@ -107,16 +107,16 @@ L100:
       if ((objcts_1.oflag1[i - 1] & ONBT) != 0) {
          return ret_val;
       }
-      if ((objcts_1.oflag1[i - 1] & VISIBT) == 0 || (
+      if ((objcts_1.oflag1[i - 1] & VISIBT) == 0 || ((
                objcts_1.oflag1[i - 1] & TRANBT) == 0 && (
-                  objcts_1.oflag2[i - 1] & OPENBT) == 0) {
+                  objcts_1.oflag2[i - 1] & OPENBT) == 0)) {
          goto L1000;
       }
 
       /* OBJ IS VISIBLE AND OPEN OR TRANSPARENT */
 
       for (j = 1; j <= objcts_1.olnt; ++j) {
-         if (objcts_1.ocan[j - 1] == i && (objcts_1.oflag1[j - 1] & 
+         if (objcts_1.ocan[j - 1] == i && (objcts_1.oflag1[j - 1] &
                   ONBT) != 0) {
             return ret_val;
          }
@@ -136,7 +136,7 @@ L1000:
 integer weight_(integer rm, integer cn, integer ad)
 {
    /* System generated locals */
-   integer ret_val, i__1;
+   integer ret_val;
 
    /* Local variables */
    integer i, j;
@@ -148,8 +148,8 @@ integer weight_(integer rm, integer cn, integer ad)
          continue;
       }
       /* 						!IF FIXED, FORGET IT. */
-      if (qhere_(i, rm) && rm != 0 || objcts_1.oadv[i - 1] == ad && ad 
-            != 0) {
+      if ((qhere_(i, rm) && rm != 0) || (objcts_1.oadv[i - 1] == ad && ad
+            != 0)) {
          goto L50;
       }
       j = i;

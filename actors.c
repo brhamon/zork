@@ -72,10 +72,10 @@ L1200:
    return ret_val;
 
 L1400:
-   if (prsvec_1.prsa == vindex_1.walkw || prsvec_1.prsa == vindex_1.takew || 
-         prsvec_1.prsa == vindex_1.dropw || prsvec_1.prsa == vindex_1.putw 
-         || prsvec_1.prsa == vindex_1.pushw || prsvec_1.prsa == 
-         vindex_1.throww || prsvec_1.prsa == vindex_1.turnw || 
+   if (prsvec_1.prsa == vindex_1.walkw || prsvec_1.prsa == vindex_1.takew ||
+         prsvec_1.prsa == vindex_1.dropw || prsvec_1.prsa == vindex_1.putw
+         || prsvec_1.prsa == vindex_1.pushw || prsvec_1.prsa ==
+         vindex_1.throww || prsvec_1.prsa == vindex_1.turnw ||
          prsvec_1.prsa == vindex_1.leapw) {
       return FALSE_;
    }
@@ -101,24 +101,24 @@ L2100:
    /* 						!WALK? */
    i = 784;
    /* 						!ASSUME WONT. */
-   if (play_1.here == rindex_1.scorr && (prsvec_1.prso == xsrch_1.xnorth || 
-            prsvec_1.prso == xsrch_1.xenter) || play_1.here == rindex_1.ncorr 
-         && (prsvec_1.prso == xsrch_1.xsouth || prsvec_1.prso == 
-            xsrch_1.xenter)) {
+   if ((play_1.here == rindex_1.scorr && (prsvec_1.prso == xsrch_1.xnorth ||
+            prsvec_1.prso == xsrch_1.xenter)) || (play_1.here == rindex_1.ncorr
+         && (prsvec_1.prso == xsrch_1.xsouth || prsvec_1.prso ==
+            xsrch_1.xenter))) {
       i = 785;
    }
    rspeak_(i);
    return ret_val;
 
 L2200:
-   if (prsvec_1.prsa == vindex_1.takew || prsvec_1.prsa == vindex_1.dropw || 
-         prsvec_1.prsa == vindex_1.putw || prsvec_1.prsa == 
-         vindex_1.throww || prsvec_1.prsa == vindex_1.pushw || 
-         prsvec_1.prsa == vindex_1.turnw || prsvec_1.prsa == 
-         vindex_1.spinw || prsvec_1.prsa == vindex_1.trntow || 
-         prsvec_1.prsa == vindex_1.follow || prsvec_1.prsa == 
-         vindex_1.stayw || prsvec_1.prsa == vindex_1.openw || 
-         prsvec_1.prsa == vindex_1.closew || prsvec_1.prsa == 
+   if (prsvec_1.prsa == vindex_1.takew || prsvec_1.prsa == vindex_1.dropw ||
+         prsvec_1.prsa == vindex_1.putw || prsvec_1.prsa ==
+         vindex_1.throww || prsvec_1.prsa == vindex_1.pushw ||
+         prsvec_1.prsa == vindex_1.turnw || prsvec_1.prsa ==
+         vindex_1.spinw || prsvec_1.prsa == vindex_1.trntow ||
+         prsvec_1.prsa == vindex_1.follow || prsvec_1.prsa ==
+         vindex_1.stayw || prsvec_1.prsa == vindex_1.openw ||
+         prsvec_1.prsa == vindex_1.closew || prsvec_1.prsa ==
          vindex_1.killw) {
       return FALSE_;
    }
@@ -212,7 +212,7 @@ L1100:
    return;
 
 L1150:
-   if (rhere == 0 || (objcts_1.oflag2[oindex_1.thief - 1] & FITEBT) 
+   if (rhere == 0 || (objcts_1.oflag2[oindex_1.thief - 1] & FITEBT)
          == 0) {
       goto L1200;
    }
@@ -302,7 +302,7 @@ L1400:
    i__1 = -oindex_1.thief;
    i = robrm_(hack_1.thfpos, 75, 0, 0, i__1);
    /* 						!ROB ROOM 75%. */
-   if (hack_1.thfpos < rindex_1.maze1 || hack_1.thfpos > rindex_1.maz15 || 
+   if (hack_1.thfpos < rindex_1.maze1 || hack_1.thfpos > rindex_1.maz15 ||
          play_1.here < rindex_1.maze1 || play_1.here > rindex_1.maz15) {
       goto L1500;
    }
@@ -333,9 +333,9 @@ L1500:
    i__1 = objcts_1.olnt;
    for (i = 1; i <= i__1; ++i) {
       /* 						!NOT IN MAZE. */
-      if (! qhere_(i, hack_1.thfpos) || objcts_1.otval[i - 1] != 0 || 
-            prob_(80, 60) || (objcts_1.oflag1[i - 1] & 
-               VISIBT + TAKEBT) != VISIBT + 
+      if (! qhere_(i, hack_1.thfpos) || objcts_1.otval[i - 1] != 0 ||
+            prob_(80, 60) || (objcts_1.oflag1[i - 1] &
+               VISIBT + TAKEBT) != VISIBT +
             TAKEBT) {
          goto L1550;
       }
@@ -363,7 +363,7 @@ L1750:
    if (hack_1.thfpos <= 0) {
       hack_1.thfpos = rooms_1.rlnt;
    }
-   if ((rooms_1.rflag[hack_1.thfpos - 1] & RLAND + RSACRD + 
+   if ((rooms_1.rflag[hack_1.thfpos - 1] & RLAND + RSACRD +
             REND) != RLAND) {
       goto L1750;
    }
@@ -386,7 +386,7 @@ L1800:
    }
    i__1 = objcts_1.olnt;
    for (i = 1; i <= i__1; ++i) {
-      if (objcts_1.oadv[i - 1] != -oindex_1.thief || prob_(70, 70) 
+      if (objcts_1.oadv[i - 1] != -oindex_1.thief || prob_(70, 70)
             || objcts_1.otval[i - 1] > 0) {
          goto L1850;
       }
