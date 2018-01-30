@@ -770,13 +770,10 @@ integer cev;
 const integer *ticks;
 integer tickln;
 {
-   /* Parameter adjustments */
-   --ticks;
-
    /* Function Body */
    ++(*ctr);
    /* 						!ADVANCE STATE CNTR. */
-   cevent_1.ctick[cev - 1] = ticks[*ctr];
+   cevent_1.ctick[cev - 1] = ticks[*ctr - 1];
    /* 						!RESET INTERRUPT. */
    if (cevent_1.ctick[cev - 1] != 0) {
       goto L100;
@@ -793,9 +790,9 @@ integer tickln;
 L100:
    if (objcts_1.oroom[obj - 1] == play_1.here || objcts_1.oadv[obj - 1] ==
          play_1.winner) {
-      rspeak_(ticks[*ctr + tickln / 2]);
+      rspeak_(ticks[*ctr + tickln / 2 - 1]);
    }
    return;
 
 } /* litint_ */
-// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
+/*  vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent: */

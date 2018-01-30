@@ -271,7 +271,10 @@ EXTERN const struct {
 
 #define findex_1 findex_
 #define flags ((logical *)&findex_1)
-#define switch_ ((integer *)&findex_1 + 46)
+#define NBR_FX_LOGICALS 46
+#define FX_LOGICALS_SZ (NBR_FX_LOGICALS * sizeof(logical))
+#define NBR_FX_INTEGERS ((sizeof(findex_) - FX_LOGICALS_SZ)/sizeof(integer))
+#define switch_ ((integer *)((char *)&findex_1 + FX_LOGICALS_SZ))
 
 EXTERN struct {
    integer dbgflg, prsflg, gdtflg;
@@ -414,4 +417,4 @@ EXTERN const struct {
 #define bats_1 bats_
 
 #endif
-// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
+/*  vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent: */

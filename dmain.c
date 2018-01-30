@@ -10,7 +10,9 @@
 #include "funcs.h"
 #include "vars.h"
 
-int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused)))
+int main(argc, argv)
+int argc UNUSED;
+char *argv[] UNUSED;
 {
    /* 1) INITIALIZE DATA STRUCTURES */
    /* 2) PLAY GAME */
@@ -23,4 +25,4 @@ int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused)))
    /* 						!DONE */
    return 0;
 } /* MAIN__ */
-// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
+/*  vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent: */

@@ -10,7 +10,8 @@
 #include "funcs.h"
 #include "vars.h"
 
-logical trollp_(integer arg __attribute__((unused)))
+logical trollp_(arg)
+integer arg UNUSED;
 {
    /* System generated locals */
    logical ret_val;
@@ -143,7 +144,8 @@ L1050:
 
 /* DECLARATIONS */
 
-logical cyclop_(integer arg __attribute__((unused)))
+logical cyclop_(arg)
+integer arg UNUSED;
 {
    /* System generated locals */
    integer i__1, i__2;
@@ -294,7 +296,8 @@ logical cyclop_(integer arg __attribute__((unused)))
 
 /* DECLARATIONS */
 
-logical thiefp_(integer arg __attribute__((unused)))
+logical thiefp_(arg)
+integer arg UNUSED;
 {
    /* System generated locals */
    integer i__1;
@@ -468,4 +471,4 @@ L750:
    return ret_val;
 
 } /* thiefp_ */
-// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
+/*  vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent: */

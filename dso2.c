@@ -72,7 +72,7 @@ L100:
    }
    /* 						!IN BUCKET? */
    nlv = (rooms_1.rflag[nr - 1] & bits) == 0;
-   // Don't change this goto without looking at compiled size very carefully
+   /*  Don't change this goto without looking at compiled size very carefully */
    if ((! lnr && nlv) || (lnr && lhr && nlv && bits != RLAND)) {
       goto L800;
    }
@@ -162,4 +162,4 @@ void scrupd_(integer n)
    return;
 
 } /* scrupd_ */
-// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
+/*  vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent: */

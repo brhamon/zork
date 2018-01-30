@@ -11,7 +11,9 @@
 
 static logical mirpan_ P((integer, logical));
 
-logical nobjs_(integer ri, integer arg __attribute__((unused)))
+logical nobjs_(ri, arg)
+integer ri;
+integer arg UNUSED;
 {
     /* System generated locals */
     integer i__1, i__2;
@@ -938,4 +940,4 @@ L600:
     return ret_val;
 
 } /* mirpan_ */
-// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
+/*  vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent: */

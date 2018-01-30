@@ -15,6 +15,24 @@
 #define const
 #endif
 
+/* If __gnu_linux__ or __MACH__ is defined, it's compatible with unix.
+ */
+#ifndef unix
+#ifdef __gnu_linux__
+#define unix
+#else
+#ifdef __MACH__
+#define unix
+#endif
+#endif
+#endif
+
+#if __GNUC__ >= 4
+#define UNUSED __attribute__((unused))
+#else
+#define UNUSED
+#endif
+
 /* Try to guess whether we need "rb" to open files in binary mode.
  * If this is unix, it doesn't matter.  Otherwise, assume that if
  * __STDC__ is defined we can use "rb".  Otherwise, assume that we
@@ -133,4 +151,4 @@ extern logical
 	yesno_ P((integer, integer, integer));
 
 #endif
-// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
+/*  vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent: */

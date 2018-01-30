@@ -686,4 +686,4 @@ L14500:
    return ret_val;
 
 } /* cxappl_ */
-// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
+/*  vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent: */

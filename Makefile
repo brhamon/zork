@@ -40,7 +40,12 @@ LIBS = -lcurses
 
 WIZARDID=$(shell id -u)
 
-CFLAGS = -Wall -Werror -Wextra
+# Although a K&R compiler is somewhat difficult to come by these days,
+# we can make GCC enforce ANSI C, which is pretty close.
+# If you aren't building with GCC, comment the next line out.
+CFLAGS = -std=iso9899:1990 -pedantic
+
+CFLAGS += -Wall -Werror -Wextra
 # Compilation flags
 ifeq ($(BUILD),debug)
 CFLAGS += -g -DDEBUG

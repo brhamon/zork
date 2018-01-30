@@ -313,4 +313,4 @@ L500:
     ret_val = TRUE_;
     return ret_val;
 } /* thisit_ */
-// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
+/*  vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent: */

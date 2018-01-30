@@ -136,4 +136,4 @@ L700:
    goto L10;
 
 } /* ballop_ */
-// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
+/*  vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent: */

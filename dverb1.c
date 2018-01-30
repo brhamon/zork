@@ -94,7 +94,8 @@ L700:
 
 /* DECLARATIONS */
 
-logical drop_(logical z __attribute__((unused)))
+logical drop_(z)
+logical z UNUSED;
 {
    /* System generated locals */
    logical ret_val;
@@ -181,7 +182,8 @@ L1000:
 
 /* DECLARATIONS */
 
-logical put_(logical flg __attribute__((unused)))
+logical put_(flg)
+logical flg UNUSED;
 {
    /* System generated locals */
    logical ret_val;
@@ -421,4 +423,4 @@ L4000:
    }
    /* 						!IF NOTHING, REPORT. */
 } /* valuac_ */
-// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
+/*  vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent: */

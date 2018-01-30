@@ -255,4 +255,4 @@ integer n;
     }
     return ret_val;
 } /* xvehic_ */
-// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
+/*  vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent: */

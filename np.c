@@ -173,14 +173,13 @@ logical vbflag;
     integer k, j1, j2, cp;
 
     /* Parameter adjustments */
-    --outbuf;
     --inbuf;
 
     /* Function Body */
 
     for (i = 1; i <= 40; ++i) {
 /* 						!CLEAR OUTPUT BUF. */
-	outbuf[i] = 0;
+	outbuf[i - 1] = 0;
 /* L100: */
     }
 
@@ -267,13 +266,13 @@ L4000:
 L4100:
     j2 = j1 * 780;
 /* 						!CHAR 1... *780 */
-    outbuf[k] = outbuf[k] + j2 + j2;
+    outbuf[k - 1] = outbuf[k - 1] + j2 + j2;
 /* 						!*1560 (40 ADDED BELOW). */
 L4200:
-    outbuf[k] += j1 * 39;
+    outbuf[k - 1] += j1 * 39;
 /* 						!*39 (1 ADDED BELOW). */
 L4300:
-    outbuf[k] += j1;
+    outbuf[k - 1] += j1;
 /* 						!*1. */
     ++cp;
     goto L200;
@@ -290,4 +289,4 @@ L6000:
 /* 						!YES, ADV OP. */
 
 } /* lex_ */
-// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
+/*  vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent: */

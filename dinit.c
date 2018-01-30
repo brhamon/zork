@@ -213,7 +213,7 @@ L10000:
    findex_1.mr1f = TRUE_;
    findex_1.mr2f = TRUE_;
    findex_1.follwf = TRUE_;
-   for (i = 1; i <= cmax; ++i) {
+   for (i = 1; i <= (integer)NBR_FX_INTEGERS; ++i) {
       /* 						!CLEAR SWITCHES. */
       switch_[i - 1] = 0;
       /* L12: */
@@ -433,6 +433,8 @@ L1925:
    printf("I require version %1d.%1d%c.\n", vers_1.vmaj, vers_1.vmin,
          vers_1.vedit);
    goto L1975;
+#else
+   (void)k;     /* silence compiler warning */
 #endif
 L1950:
 #ifdef DEBUG
@@ -453,4 +455,4 @@ L1975:
    return ret_val;
 
 } /* init_ */
-// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
+/*  vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent: */

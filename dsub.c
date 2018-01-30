@@ -81,6 +81,8 @@ static void rspsb2nl_(integer n, integer y, integer z, integer nl)
       fprintf(stderr, "Error seeking database loc %ld\n", x);
       exit_();
    }
+#else
+   (void)res;   /* Silence compiler warning. */
 #endif
 
    if (nl)
@@ -157,7 +159,9 @@ logical objact_()
 
 /* 	CALL BUG(NO,PAR) */
 
-void bug_(integer a __attribute__((unused)), integer b __attribute__((unused)))
+void bug_(a, b)
+integer a UNUSED;
+integer b UNUSED;
 {
 #ifdef DEBUG
 
@@ -572,4 +576,4 @@ logical rappli_(integer ri)
    }
    /* 						!IF OLD, PROCESSOR 1. */
 } /* rappli_ */
-// vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent:
+/*  vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 cindent: */
