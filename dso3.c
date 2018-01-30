@@ -39,8 +39,10 @@ logical findxt_(integer dir, integer rm)
       case 3:
          curxt_1.xobj = exits_1.travel[xi + 1] & xpars_1.xrmask;
          curxt_1.xactio = exits_1.travel[xi + 1] / xpars_1.xashft;
+         /* falls through */
       case 2:
          curxt_1.xstrng = exits_1.travel[xi];
+         /* falls through */
       case 1:
          xi += xpars_1.xelnt[curxt_1.xtype - 1];
          /* 						!ADVANCE TO NEXT ENTRY. */

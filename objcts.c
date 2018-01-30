@@ -20,7 +20,6 @@ integer arg;
     logical ret_val;
 
     /* Local variables */
-    logical f;
     integer flobts, i;
     integer j, av, io, ir, iz;
     integer odi2 = 0, odo2 = 0;
@@ -463,9 +462,9 @@ L32500:
 L35000:
     rspeak_(50);
 /* 						!TIME TO FLY, JACK. */
-    f = moveto_(bats_1.batdrp[rnd_(9)], play_1.winner);
+    (void)moveto_(bats_1.batdrp[rnd_(9)], play_1.winner);
 /* 						!SELECT RANDOM DEST. */
-    f = rmdesc_(0);
+    (void)rmdesc_(0);
     return ret_val;
 /* OAPPLI, PAGE 7 */
 
@@ -556,7 +555,7 @@ L47000:
 	goto L47200;
     }
 /* 						!ROBOT HERE? */
-    f = moveto_(rindex_1.caged, play_1.winner);
+    (void)moveto_(rindex_1.caged, play_1.winner);
 /* 						!YES, MOVE INTO CAGE. */
     newsta_(oindex_1.robot, 0, rindex_1.caged, 0, 0);
 /* 						!MOVE ROBOT. */
@@ -696,9 +695,9 @@ L50900:
 	return ret_val;
     }
 /* 						!IN BUCKET? */
-    f = moveto_(objcts_1.oroom[oindex_1.bucke - 1], play_1.winner);
+    (void)moveto_(objcts_1.oroom[oindex_1.bucke - 1], play_1.winner);
 /* 						!MOVE ADVENTURER. */
-    f = rmdesc_(0);
+    (void)rmdesc_(0);
 /* 						!DESCRIBE ROOM. */
     return ret_val;
 /* OAPPLI, PAGE 9 */
@@ -1131,9 +1130,9 @@ L62200:
     return ret_val;
 
 L62300:
-    f = moveto_(rindex_1.cpant, play_1.winner);
+    (void)moveto_(rindex_1.cpant, play_1.winner);
 /* 						!TO ANTEROOM. */
-    f = rmdesc_(3);
+    (void)rmdesc_(3);
 /* 						!DESCRIBE. */
     return ret_val;
 

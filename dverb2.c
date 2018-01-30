@@ -123,7 +123,7 @@ void rstrgm_()
    do_uio(1, &j, sizeof(integer));
    do_uio(1, &k, sizeof(integer));
 
-   if (i != vers_1.vmaj | j != vers_1.vmin) {
+   if (i != vers_1.vmaj || j != vers_1.vmin) {
       goto L200;
    }
 
@@ -469,7 +469,7 @@ L6000:
    /* C7-	FROBOZZ FLAG (BANK ALARM) */
 
 L7000:
-   findex_1.frobzf = objcts_1.oroom[oindex_1.bills - 1] != 0 &
+   findex_1.frobzf = objcts_1.oroom[oindex_1.bills - 1] != 0 &&
       objcts_1.oroom[oindex_1.portr - 1] != 0;
    return ret_val;
    /* CXAPPL, PAGE 3 */

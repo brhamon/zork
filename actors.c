@@ -14,7 +14,6 @@ integer ri;
    logical ret_val;
 
    /* Local variables */
-   logical f;
    integer i;
 
    if (ri == 0) {
@@ -43,7 +42,7 @@ L1000:
    /* 						!ROBOT RAISED CAGE. */
    play_1.winner = aindex_1.player;
    /* 						!RESET FOR PLAYER. */
-   f = moveto_(rindex_1.cager, play_1.winner);
+   (void) moveto_(rindex_1.cager, play_1.winner);
    /* 						!MOVE TO NEW ROOM. */
    newsta_(oindex_1.cage, 567, rindex_1.cager, 0, 0);
    /* 						!INSTALL CAGE IN ROOM. */
@@ -310,8 +309,8 @@ L1400:
    for (i = 1; i <= i__1; ++i) {
       /* 						!BOTH IN MAZE. */
       if (! qhere_(i, hack_1.thfpos) || prob_(60, 60) || (
-               objcts_1.oflag1[i - 1] & VISIBT + TAKEBT) !=
-            VISIBT + TAKEBT) {
+               objcts_1.oflag1[i - 1] & (VISIBT | TAKEBT)) !=
+            (VISIBT | TAKEBT)) {
          goto L1450;
       }
       rspsub_(590, objcts_1.odesc2[i - 1]);
@@ -335,8 +334,7 @@ L1500:
       /* 						!NOT IN MAZE. */
       if (! qhere_(i, hack_1.thfpos) || objcts_1.otval[i - 1] != 0 ||
             prob_(80, 60) || (objcts_1.oflag1[i - 1] &
-               VISIBT + TAKEBT) != VISIBT +
-            TAKEBT) {
+               (VISIBT | TAKEBT)) != (VISIBT | TAKEBT)) {
          goto L1550;
       }
       i__2 = -oindex_1.thief;
@@ -363,8 +361,7 @@ L1750:
    if (hack_1.thfpos <= 0) {
       hack_1.thfpos = rooms_1.rlnt;
    }
-   if ((rooms_1.rflag[hack_1.thfpos - 1] & RLAND + RSACRD +
-            REND) != RLAND) {
+   if ((rooms_1.rflag[hack_1.thfpos - 1] & (RLAND | RSACRD | REND)) != RLAND) {
       goto L1750;
    }
    hack_1.thfflg = FALSE_;

@@ -16,7 +16,6 @@ void fightd_()
    const integer rout = 1;
 
    /* Local variables */
-   logical f;
    integer i, j, ra;
    integer obj;
    integer res;
@@ -34,7 +33,7 @@ void fightd_()
          if (!((objcts_1.oflag2[obj - 1] & FITEBT) == 0 || ra == 0)) {
             prsvec_1.prsa = vindex_1.fightw;
             /* 						!HAVE A FIGHT. */
-            f = oappli_(ra, 0);
+            (void)oappli_(ra, 0);
          }
          if (obj == oindex_1.thief) {
             findex_1.thfenf = FALSE_;
@@ -47,7 +46,7 @@ void fightd_()
          }
          prsvec_1.prsa = vindex_1.inxw;
          /* 						!WAKE HIM UP. */
-         f = oappli_(ra, 0);
+         (void)oappli_(ra, 0);
          objcts_1.ocapac[obj - 1] = abs(objcts_1.ocapac[obj - 1]);
          continue;
       }
@@ -93,7 +92,7 @@ void fightd_()
       /* 						!ANYTHING TO DO? */
       prsvec_1.prsa = vindex_1.inxw;
       /* 						!YES, WAKE HIM UP. */
-      f = oappli_(ra, 0);
+      (void)oappli_(ra, 0);
       continue;
       /* 						!NOTHING ELSE HAPPENS. */
    }
@@ -173,8 +172,7 @@ integer blow_(integer h, integer v, integer rmk, integer hflg, integer out)
    integer ret_val, i__1, i__2;
 
    /* Local variables */
-   logical f;
-   integer i, j, oa, ra, od, mi, dv, def;
+   integer i, j, ra, od, mi, dv, def;
    integer tbl;
    integer att, res;
    integer dweap;
@@ -207,7 +205,6 @@ integer blow_(integer h, integer v, integer rmk, integer hflg, integer out)
 L100:
    att = fights_(h, 1);
    /* 						!GET HIS STRENGTH. */
-   oa = att;
    def = vilstr_(v);
    /* 						!GET VILL STRENGTH. */
    od = def;
@@ -256,7 +253,6 @@ L1000:
 L1200:
    att = vilstr_(v);
    /* 						!SET UP ATT, DEF. */
-   oa = att;
    def = fights_(h, 1);
    if (def <= 0) {
       return ret_val;
@@ -443,7 +439,7 @@ L4000:
    /* 						!IF NX TO DO, EXIT. */
    prsvec_1.prsa = vindex_1.deadxw;
    /* 						!LET HIM KNOW. */
-   f = oappli_(ra, 0);
+   (void)oappli_(ra, 0);
    return ret_val;
 
 L4100:
@@ -452,7 +448,7 @@ L4100:
    }
    prsvec_1.prsa = vindex_1.outxw;
    /* 						!LET HIM BE OUT. */
-   f = oappli_(ra, 0);
+   (void)oappli_(ra, 0);
    return ret_val;
 
 L4500:

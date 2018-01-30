@@ -18,7 +18,6 @@ integer arg;
     logical ret_val;
 
     /* Local variables */
-    logical f;
     integer i;
     integer mroom;
     integer av;
@@ -309,7 +308,7 @@ L14000:
 	}
 /* L14100: */
     }
-    f = moveto_(mroom, play_1.winner);
+    (void)moveto_(mroom, play_1.winner);
     rspeak_(163);
 /* 						!SHAKE WORLD. */
     return ret_val;

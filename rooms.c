@@ -15,7 +15,6 @@ integer ri;
     logical ret_val;
 
     /* Local variables */
-    logical f;
     integer i;
     integer j;
 
@@ -179,8 +178,8 @@ L4500:
 	return ret_val;
     }
 /* 						!WALKIN? */
-    if ((objcts_1.oflag2[oindex_1.door - 1] & OPENBT +
-	    TCHBT) != OPENBT) {
+    if ((objcts_1.oflag2[oindex_1.door - 1] & (OPENBT |
+	    TCHBT)) != OPENBT) {
 	return ret_val;
     }
     objcts_1.oflag2[oindex_1.door - 1] = (objcts_1.oflag2[oindex_1.door - 1] |
@@ -475,7 +474,7 @@ L17500:
     }
     rspeak_(50);
 /* 						!TIME TO FLY, JACK. */
-    f = moveto_(bats_1.batdrp[rnd_(9)], play_1.winner);
+    (void)moveto_(bats_1.batdrp[rnd_(9)], play_1.winner);
 /* 						!SELECT RANDOM DEST. */
     ret_val = FALSE_;
 /* 						!INDICATE NEW DESC NEEDED. */
@@ -932,7 +931,7 @@ L36600:
 
 L37000:
     if (findex_1.cagesf) {
-	f = moveto_(rindex_1.cager, play_1.winner);
+	(void)moveto_(rindex_1.cager, play_1.winner);
     }
 /* 						!IF SOLVED, MOVE. */
     return ret_val;

@@ -20,8 +20,8 @@ integer rm;
    /* 						!ASSUME SUPERBRIEF FORMAT. */
    for (i = 1; i <= objcts_1.olnt; ++i) {
       /* 						!LOOP ON OBJECTS */
-      if (! qhere_(i, rm) || (objcts_1.oflag1[i - 1] & VISIBT +
-               NDSCBT) != VISIBT || i == advs_1.avehic[
+      if (! qhere_(i, rm) || (objcts_1.oflag1[i - 1] & (VISIBT |
+               NDSCBT)) != VISIBT || i == advs_1.avehic[
             play_1.winner - 1]) {
          continue;
       }
@@ -49,8 +49,8 @@ integer rm;
 
    for (i = 1; i <= objcts_1.olnt; ++i) {
       /* 						!LOOP ON OBJECTS. */
-      if (! qhere_(i, rm) || (objcts_1.oflag1[i - 1] & VISIBT +
-               NDSCBT) != VISIBT) {
+      if (! qhere_(i, rm) || (objcts_1.oflag1[i - 1] & (VISIBT |
+               NDSCBT)) != VISIBT) {
          continue;
       }
       if ((objcts_1.oflag2[i - 1] & ACTRBT) != 0) {

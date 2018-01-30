@@ -242,7 +242,6 @@ void jigsup_(integer desc)
 
    /* Local variables */
    integer nonofl;
-   logical f;
    integer i, j;
 
    rspeak_(desc);
@@ -290,7 +289,7 @@ void jigsup_(integer desc)
    ++state_1.deaths;
    scrupd_(- 10);
    /* 						!CHARGE TEN POINTS. */
-   f = moveto_(rindex_1.fore1, play_1.winner);
+   (void)moveto_(rindex_1.fore1, play_1.winner);
    /* 						!REPOSITION HIM. */
    findex_1.egyptf = TRUE_;
    /* 						!RESTORE COFFIN. */

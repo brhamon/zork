@@ -100,11 +100,11 @@ logical init_()
    logical ret_val;
 
    /* Local variables */
-   integer xmax, r2max, dirmax, recno;
+   integer xmax, r2max;
    integer i, j, k;
    register integer ch;
    register FILE *indxfile;
-   integer mmax, omax, rmax, vmax, amax, cmax, fmax, smax;
+   integer mmax, omax, rmax, vmax, amax, cmax, fmax;
 
    more_init();
 
@@ -142,10 +142,8 @@ L10000:
    amax = 4;
    cmax = 25;
    fmax = 46;
-   smax = 22;
    xmax = 900;
    r2max = 20;
-   dirmax = 15;
 
    rmsg_1.mlnt = 0;
    /* 						!INIT ARRAY COUNTERS. */
@@ -189,8 +187,6 @@ L10000:
    hack_1.swdsta = 0;
    /* 						!SWORD IS OFF. */
 
-   recno = 1;
-   /* 						!INIT DB FILE POINTER. */
    star_1.mbase = 0;
    /* 						!INIT MELEE BASE. */
    /* INIT, PAGE 3 */

@@ -18,11 +18,10 @@ logical nobjs_(integer ri, integer arg __attribute__((unused)))
     logical ret_val;
 
     /* Local variables */
-    logical f;
     integer target;
     integer i;
     integer j;
-    integer av, wl;
+    integer wl;
     integer nxt, odi2 = 0, odo2 = 0;
 
     if (prsvec_1.prso != 0) {
@@ -31,7 +30,7 @@ logical nobjs_(integer ri, integer arg __attribute__((unused)))
     if (prsvec_1.prsi != 0) {
 	odi2 = objcts_1.odesc2[prsvec_1.prsi - 1];
     }
-    av = advs_1.avehic[play_1.winner - 1];
+    (void)advs_1.avehic[play_1.winner - 1];
     ret_val = TRUE_;
 
     switch (ri - 31) {
@@ -175,7 +174,7 @@ L3100:
 /* 						!BYE BYE GNOME. */
     cevent_1.ctick[cindex_1.cevzgo - 1] = 0;
 /* 						!CANCEL EXIT. */
-    f = moveto_(rindex_1.bkent, play_1.winner);
+    (void)moveto_(rindex_1.bkent, play_1.winner);
 /* 						!NOW IN BANK ENTRANCE. */
     return ret_val;
 
@@ -734,11 +733,11 @@ L17000:
     }
 /* 						!IN RIGHT CELL? */
     objcts_1.oflag1[oindex_1.odoor - 1] |= VISIBT;
-    f = moveto_(rindex_1.ncell, aindex_1.player);
+    (void)moveto_(rindex_1.ncell, aindex_1.player);
 /* 						!YES, MOVETO NCELL. */
     goto L17400;
 L17200:
-    f = moveto_(rindex_1.pcell, aindex_1.player);
+    (void)moveto_(rindex_1.pcell, aindex_1.player);
 /* 						!NO, MOVETO PCELL. */
 
 L17400:

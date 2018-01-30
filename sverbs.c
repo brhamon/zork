@@ -30,7 +30,6 @@ integer ri;
    logical ret_val;
 
    /* Local variables */
-   logical f;
    const char *z, *z2;
    integer i, j;
    integer k;
@@ -217,7 +216,7 @@ L5000:
 L6000:
    i = 330;
    /* 						!ASSUME WATER. */
-   if ((rooms_1.rflag[play_1.here - 1] & RWATER + RFILL) ==
+   if ((rooms_1.rflag[play_1.here - 1] & (RWATER | RFILL)) ==
          0) {
       i = rnd_(3) + 331;
    }
@@ -295,7 +294,7 @@ L10050:
    return ret_val;
 
 L10100:
-   f = rmdesc_(3);
+   (void)rmdesc_(3);
    /* 						!MOVED, DESCRIBE. */
    return ret_val;
 
@@ -392,9 +391,9 @@ L17000:
    /* 						!START ALARM. */
    rspeak_(668);
    /* 						!DISORIENT HIM. */
-   f = moveto_(screen_1.scolrm, play_1.winner);
+   (void)moveto_(screen_1.scolrm, play_1.winner);
    /* 						!INTO ROOM. */
-   f = rmdesc_(3);
+   (void)rmdesc_(3);
    /* 						!DESCRIBE. */
    return ret_val;
 
@@ -450,9 +449,9 @@ L17500:
    /* 						!CANCEL ALARM. */
    rspeak_(668);
    /* 						!DISORIENT HIM. */
-   f = moveto_(rindex_1.bkbox, play_1.winner);
+   (void)moveto_(rindex_1.bkbox, play_1.winner);
    /* 						!BACK IN BOX ROOM. */
-   f = rmdesc_(3);
+   (void)rmdesc_(3);
    return ret_val;
 
    /* V87--	RING.  A JOKE. */

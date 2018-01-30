@@ -72,7 +72,7 @@ void cpgoto_(integer st)
    for (i = 1; i <= objcts_1.olnt; ++i) {
       /* 						!RELOCATE OBJECTS. */
       if (objcts_1.oroom[i - 1] == rindex_1.cpuzz && (objcts_1.oflag2[i - 1]
-               & ACTRBT + VILLBT) == 0) {
+               & (ACTRBT | VILLBT)) == 0) {
          i__2 = findex_1.cphere * hyper_1.hfactr;
          newsta_(i, 0, i__2, 0, 0);
       }

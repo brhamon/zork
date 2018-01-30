@@ -18,14 +18,13 @@ static void xendmv_ P((logical));
 void game_()
 {
     /* Local variables */
-    logical f;
     integer i;
 
 /* START UP, DESCRIBE CURRENT LOCATION. */
 
     rspeak_(1);
 /* 						!WELCOME ABOARD. */
-    f = rmdesc_(3);
+    (void)rmdesc_(3);
 /* 						!START GAME. */
 
 /* NOW LOOP, READING AND EXECUTING COMMANDS. */
@@ -78,7 +77,7 @@ L350:
     if (! findex_1.echof && play_1.here == rindex_1.echor) {
 	goto L1000;
     }
-    f = rappli_(rooms_1.ractio[play_1.here - 1]);
+    (void)rappli_(rooms_1.ractio[play_1.here - 1]);
 
 L400:
     xendmv_(play_1.telflg);
@@ -186,7 +185,7 @@ L2150:
     }
 /* 						!VERB HANDLE? */
 /* L2350: */
-    f = rappli_(rooms_1.ractio[play_1.here - 1]);
+    (void)rappli_(rooms_1.ractio[play_1.here - 1]);
 
 L2400:
     xendmv_(play_1.telflg);
@@ -208,9 +207,6 @@ L2900:
 static void xendmv_(flag)
 logical flag;
 {
-    /* Local variables */
-    logical f;
-
     if (! (flag)) {
 	rspeak_(341);
     }
@@ -228,11 +224,11 @@ logical flag;
     }
 /* 						!SWORD DEMON. */
     if (prsvec_1.prswon) {
-	f = clockd_();
+	(void)clockd_();
     }
 /* 						!CLOCK DEMON. */
     if (prsvec_1.prswon) {
-	f = xvehic_(2);
+	(void)xvehic_(2);
     }
 /* 						!VEHICLE READOUT. */
 } /* xendmv_ */

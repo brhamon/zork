@@ -100,7 +100,6 @@ logical drop_(logical z __attribute__((unused)))
    logical ret_val;
 
    /* Local variables */
-   logical f;
    integer i, x;
 
    ret_val = TRUE_;
@@ -134,7 +133,7 @@ L300:
    /* 						!IS HE IN VEHICLE? */
    prsvec_1.prsi = advs_1.avehic[play_1.winner - 1];
    /* 						!YES, */
-   f = put_(1);
+   (void)put_(1);
    /* 						!DROP INTO VEHICLE. */
    prsvec_1.prsi = 0;
    /* 						!DISARM PARSER. */
@@ -204,8 +203,8 @@ logical put_(logical flg __attribute__((unused)))
 
 L200:
    if ((objcts_1.oflag2[prsvec_1.prsi - 1] & OPENBT) != 0 || (
-            objcts_1.oflag1[prsvec_1.prsi - 1] & DOORBT +
-            CONTBT) != 0 || (objcts_1.oflag2[prsvec_1.prsi - 1] &
+            objcts_1.oflag1[prsvec_1.prsi - 1] & (DOORBT |
+            CONTBT)) != 0 || (objcts_1.oflag2[prsvec_1.prsi - 1] &
                VEHBT) != 0) {
       goto L300;
    }
@@ -327,7 +326,6 @@ void valuac_(integer v)
    /* Local variables */
    logical f;
    integer i;
-   logical f1;
    integer savep, saveh;
 
    f = TRUE_;
@@ -364,7 +362,7 @@ void valuac_(integer v)
       }
       f = FALSE_;
       rspsub_(580, objcts_1.odesc2[prsvec_1.prso - 1]);
-      f1 = take_(1);
+      (void)take_(1);
       if (saveh != play_1.here) {
          return;
       }
@@ -383,7 +381,7 @@ L1000:
       }
       f = FALSE_;
       rspsub_(580, objcts_1.odesc2[prsvec_1.prso - 1]);
-      f1 = drop_(1);
+      (void)drop_(1);
       if (saveh != play_1.here) {
          return;
       }
@@ -405,7 +403,7 @@ L2000:
       }
       f = FALSE_;
       rspsub_(580, objcts_1.odesc2[prsvec_1.prso - 1]);
-      f1 = put_(1);
+      (void)put_(1);
       if (saveh != play_1.here) {
          return;
       }

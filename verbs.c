@@ -657,7 +657,7 @@ L48000:
     }
     if ((objcts_1.oflag1[j - 1] & TRANBT) == 0 && (! ((
 	    objcts_1.oflag2[j - 1] & OPENBT) != 0) || (
-	    objcts_1.oflag1[j - 1] & DOORBT + CONTBT) == 0))
+	    objcts_1.oflag1[j - 1] & (DOORBT | CONTBT)) == 0))
 	     {
 	goto L10;
     }
@@ -799,7 +799,7 @@ L56000:
 	goto L56050;
     }
 /* 						!ANY OBJ SPECIFIED? */
-    if ((rooms_1.rflag[play_1.here - 1] & RWATER + RFILL) !=
+    if ((rooms_1.rflag[play_1.here - 1] & (RWATER | RFILL)) !=
 	    0) {
 	goto L56025;
     }
@@ -896,9 +896,9 @@ L59600:
 /* V137--	BURN.  COMPLICATED. */
 
 L60000:
-    if ((objcts_1.oflag1[prsvec_1.prsi - 1] & FLAMBT +
-	    LITEBT + ONBT) != FLAMBT +
-	    LITEBT + ONBT) {
+    if ((objcts_1.oflag1[prsvec_1.prsi - 1] & (FLAMBT |
+	    LITEBT | ONBT)) != (FLAMBT |
+	    LITEBT | ONBT)) {
 	goto L60400;
     }
     if (objact_()) {
@@ -1158,8 +1158,8 @@ L80300:
 /* 						!OBJ HANDLE? */
     i = 354;
 /* 						!ASSUME VILLAIN. */
-    if ((objcts_1.oflag2[prsvec_1.prso - 1] & VILLBT +
-	    ACTRBT) == 0) {
+    if ((objcts_1.oflag2[prsvec_1.prso - 1] & (VILLBT |
+	    ACTRBT)) == 0) {
 	i = 355;
     }
     rspsub_(i, odo2);

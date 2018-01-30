@@ -114,8 +114,8 @@ L600:
    /* 						!LIGHT FIRE IN RECEP. */
    cevent_1.ctick[cindex_1.cevbrn - 1] = objcts_1.osize[prsvec_1.prso - 1] *
       20;
-   objcts_1.oflag1[prsvec_1.prso - 1] |= ONBT + FLAMBT +
-      LITEBT & ~ (TAKEBT + READBT);
+   objcts_1.oflag1[prsvec_1.prso - 1] |= (ONBT | FLAMBT |
+      LITEBT) & ~ (TAKEBT | READBT);
    if (findex_1.binff != 0) {
       return ret_val;
    }
