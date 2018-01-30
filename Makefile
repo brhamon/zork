@@ -1,7 +1,7 @@
 # Makefile for dungeon
 
 CC = gcc
-BUILD ?= debug
+BUILD ?= release
 # Where to install the program
 BINDIR = /usr/games
 
