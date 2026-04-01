@@ -108,6 +108,7 @@ void rstrgm_()
    /* Local variables */
    integer i, j, k;
    FILE *e;
+   size_t ux;
 
    prsvec_1.prswon = FALSE_;
    /* 						!DISABLE GAME. */
@@ -117,7 +118,7 @@ void rstrgm_()
       goto L100;
 
 #define do_uio(i, zbuf, cbytes) \
-   (void)fread((char *)(zbuf), (cbytes), (i), e)
+   ux=fread((char *)(zbuf), (cbytes), (i), e)
 
    do_uio(1, &i, sizeof(integer));
    do_uio(1, &j, sizeof(integer));
@@ -179,6 +180,7 @@ void rstrgm_()
    do_uio(25, &cevent_1.ctick[0], sizeof(integer));
 
    (void)fclose(e);
+   (void)ux;
 
    rspeak_(599);
    return;

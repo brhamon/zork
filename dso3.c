@@ -138,12 +138,14 @@ logical yesno_(integer q, integer y, integer n)
 {
    /* Local variables */
    char ans[100];
+   char *ux;
 
 L100:
    rspeak_(q);
    /* 						!ASK */
    (void) fflush(stdout);
-   (void) fgets(ans, sizeof ans, stdin);
+   ux=fgets(ans, sizeof ans, stdin);
+   (void)ux;
    more_input();
    /* 						!GET ANSWER */
    if (*ans == 'Y' || *ans == 'y') {
